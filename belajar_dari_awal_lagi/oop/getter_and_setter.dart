@@ -1,18 +1,21 @@
+import 'extension_methods_mixins_static.dart';
+
 enum JenisKelamin { L, P }
 
 class Siswa {
-  final String nama;
+  String nama;
   // getter ini untuk ngedapetin data objek tapi kita manipulasi dulu
   String get namaDenganJenisKelamin {
     var panggilan = jk == "L" ? "Siswa" : "Siswi";
     return "$panggilan $nama";
   }
 
-  String jk;
-  // getter ini untuk masukin data ke objek tapi kita manipulasi dulu
   set setJKwithEnum(JenisKelamin jenisKelamin) {
     this.jk = jenisKelamin == JenisKelamin.L ? "L" : "P";
   }
+
+  String jk;
+  // getter ini untuk masukin data ke objek tapi kita manipulasi dulu
 
   final int umur;
   Siswa(this.nama, this.jk, this.umur);
@@ -31,5 +34,10 @@ void main(List<String> args) {
 
   print("After ${siswa.jk}");
 
+  // print(siswa.setJKwithEnum); // ga bisa make setter untuk ngakses, cuma bisa setting
   print(siswa.namaDenganJenisKelamin);
+  siswa.nama = "Majid";
+  Karyawan karyawan = Karyawan("nama", JenisKelamin.L, 33);
+  // karyawan._ // ga bisa manggil private method/ variable kalau beda file
+  // siswa.namaDenganJenisKelamin = "ajslkjs"; // ga akan bisa, karena ini cuma ngambil nilai
 }
