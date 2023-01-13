@@ -31,6 +31,9 @@ class Animal {
   makan() {}
 }
 
+// var contohAnimal = Animal(namaPanggilan: namaPanggilan, jumlahKaki: jumlahKaki, jumlahMata: jumlahMata)
+var contohDataDariInternet = Human.asian("Majid");
+
 class Human {
   final String nama;
   final String jenisKelamin;
@@ -52,13 +55,17 @@ class Human {
         tinggiBadan = 190,
         hobi = "Mabar",
         pendidikan = "SD";
-  Human.asian()
-      : nama = "",
+  Human.asian(String a)
+      : nama = a,
         jenisKelamin = "L",
         umur = 0,
         tinggiBadan = 190,
         hobi = "Healing",
         pendidikan = "TK";
+
+  factory Human.african() {
+    return contohDataDariInternet;
+  }
 }
 // . => operator accesor
 
@@ -94,7 +101,7 @@ void main(List<String> args) {
   int? b = int.tryParse(a);
 
   var orangBule = Human.european();
-  var orangCina = Human.asian();
+  var orangCina = Human.asian("Aldi");
 
   if (ipin is Human) {
     print("Ya, benar");
