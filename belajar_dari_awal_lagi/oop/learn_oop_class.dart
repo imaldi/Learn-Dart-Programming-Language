@@ -25,7 +25,7 @@ class Animal {
   }
 
   bergerak() {
-    // jalan
+    print("Bergeraknya Hewan");
   }
 
   makan() {}
