@@ -24,30 +24,37 @@ class Impostor implements Person {
 String greetBob(Person person) => person.greet('Bob');
 
 // implicit interface beda dengan inheritance
-class Cat implements Animal {
-  @override
-  int jumlahKaki = 4;
+// class Cat implements Animal {
+//   @override
+//   int jumlahKaki = 4;
 
-  @override
-  int jumlahMata = 2;
+//   @override
+//   int jumlahMata = 2;
 
-  @override
-  String namaPanggilan = "Tom";
+//   @override
+//   String namaPanggilan = "Tom";
 
-  @override
-  bergerak() {
-    print("jalan");
-  }
+//   @override
+//   bergerak() {
+//     print("jalan");
+//   }
 
-  @override
-  bersuara(String suaranyaGimana) {
-    print("Meong");
-  }
+//   @override
+//   bersuara(String suaranyaGimana) {
+//     print("Meong");
+//   }
 
-  @override
-  makan() {
-    print("Pake mulut");
-  }
+//   @override
+//   makan() {
+//     print("Pake mulut");
+//   }
+// }
+
+class Cat extends Animal {
+  Cat(
+      {super.namaPanggilan = "Default Name",
+      required super.jumlahKaki,
+      required super.jumlahMata});
 }
 
 // inheritance
@@ -58,6 +65,10 @@ class Dog extends Animal {
     super.jumlahKaki: 4,
     super.jumlahMata: 2,
   });
+
+  // Dog.default():
+  //   namaPanggilan = "A",
+  //   jum
 
   @override
   bergerak() {
