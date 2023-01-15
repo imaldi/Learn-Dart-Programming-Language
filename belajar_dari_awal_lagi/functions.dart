@@ -39,7 +39,7 @@ void main(List<String> args) {
     return hasil;
   });
   // pakai konsep "function as first class object"
-  hitungAngka(a, b, luasSegitiga);
+  hitungAngka(a, b, sum);
   // hitungAngka(a, b, contohSignatureBeda);
 
   // coba throw error
